@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BEM</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="toast"></div>
+
+    <!-- tao ra cac button de tuong tac -->
+    <div class="container">
+      <div onclick="showSuccessToast();" class="btn btn--success">
+        Show success toast
+      </div>
+
+      <div onclick="showInfoToast();" class="btn btn--info">
+        Show info toast
+      </div>
+      <div onclick="showWarnToast();" class="btn btn--warn">
+        Show warning toast
+      </div>
+      <div onclick="showErrorToast();" class="btn btn--danger">
+        Show error toast
+      </div>
+    </div>
+
+    <script>
+      function showSuccessToast() {
+        toast({
+          title: "Success",
+          message: "Your action was completed successfully!",
+          type: "success",
+          duration: 10000,
+        });
+      }
+      function showErrorToast() {
+        toast({
+          title: "Error",
+          message: "An error occurred. Please try again later.",
+          type: "error",
+          duration: 10000,
+        });
+      }
+      function showInfoToast() {
+        toast({
+          title: "Info",
+          message: "THere's some important information you should know.",
+          type: "info",
+          duration: 10000,
+        });
+      }
+      function showWarnToast() {
+        toast({
+          title: "Warning",
+          message: "Be careful! There's something you need to check.",
+          type: "warning",
+          duration: 10000,
+        });
+      }
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>

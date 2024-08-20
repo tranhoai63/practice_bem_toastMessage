@@ -1,0 +1,188 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, sans-serif;
+  background-color: #f4f4f5;
+}
+
+body > div {
+    margin: auto;
+  }
+/* block */
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 12px 48px;
+    border-radius: 50px;
+    cursor: pointer;
+    min-width: 120px;
+    transition: opacity 0.2s ease;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Chia thành 4 cột, mỗi cột chiếm 1 phần */
+    gap: 10px; /* Khoảng cách giữa các button */
+}
+/* Modifier */
+.btn {
+    padding: 10px 20px; /* Khoảng cách bên trong button */
+    text-align: center; /* Căn giữa nội dung trong button */
+}
+.btn--size-l {
+    padding: 16px 56px;
+  }
+  
+  .btn--size-s {
+    padding: 8px 32px;
+  }
+  
+  .btn:hover {
+    opacity: 0.8;
+  }
+  
+  .btn + .btn {
+    margin-left: 16px;
+  }
+  
+  .btn--success {
+    background-color: #3be15c;
+  }
+  
+  .btn--warn {
+    background-color: #ffb702;
+  }
+  
+  .btn--danger {
+    background-color: red;
+  }
+
+  .btn--info {
+    background-color: #2f86eb;
+  }
+  
+  .btn--disabled {
+    opacity: 0.5 !important;
+    cursor: default;
+  }
+
+
+#toast {
+    position: fixed;
+    top: 32px;
+    right: 32px; 
+    z-index: 9999999;
+}
+.toast {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 20px 0 ;
+    min-width: 400px;
+    max-width: 450px;
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    transition: all linear 0.3s;
+    /* để tạo được hiệu ứng cho toast cần thiết kế thuộcj tính animation*/
+    /* animation: slideInLeft ease .3s;
+    animation: fadeOut linear 1s 3s forwards; */
+
+}
+/* Hiêuk ứng trượt hộp toast massage từ bên trái vào page */
+@keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(calc(100% + 32px));
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+/* Hiệu ứng làm mờ hoppj toast */
+@keyframes fadeOut {
+    to {
+      opacity: 0;
+    }
+  }
+
+.toast--success {
+    border-color: #3be15c;
+
+}
+.toast--success .toast__icon {
+    
+    color: #3be15c; 
+
+}
+
+.toast--info {
+    border-color: #2f86eb;
+    
+}
+
+.toast--info .toast__icon {
+    color: #2f86eb;
+
+}
+.toast--warning {
+    border-color: #ffc021;
+    
+}
+.toast--warning .toast__icon {
+    color: #ffc021;;
+
+}
+.toast--error {
+    border-color:red;
+    
+}
+.toast--error .toast__icon {
+    color: red;
+
+}
+.toast + .toast {
+    margin-top: 10px;
+}
+.toast__icon {
+    font-size: 24px;
+    padding: 0 16px;
+
+}
+.toast__body {
+    /* padding: 0 20px; */
+    flex-grow: 1;
+
+}
+.toast__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: :#333;
+
+}
+.toast__msg {
+    font-size: 14px;
+    color: #888;
+    margin-top: 6px;
+    line-height: 1.5;
+
+}
+.toast__close {
+    font-size: 20px;
+    padding: 0 16px;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
